@@ -66,7 +66,7 @@ Most LLM models can reason about code and data, but cannot natively generate nat
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/copilot-desktop-mcp.git
+git clone https://github.com/avianhermana/copilot-desktop-mcp.git
 cd copilot-desktop-mcp
 
 # Create and activate virtual environment
