@@ -1,0 +1,52 @@
+# Copilot Desktop MCP Configuration
+# Copy this file to config.yaml to customize your settings.
+
+server:
+  name: "Copilot Desktop MCP"
+  host: "127.0.0.1"
+  port: 8765
+
+workspace:
+  # Directories the AI agent is allowed to read, write, and search.
+  # Paths can be absolute (e.g. C:\Project, C:\Users\Username\Documents).
+  allowed_roots:
+    - "C:\\Project"
+
+  # Specific file names blocked from being read or searched (secrets protection)
+  blocked_names:
+    - ".env"
+    - ".env.local"
+    - "id_rsa"
+    - "id_ed25519"
+    - "client_secret.json"
+
+  # Path components blocked from traversal
+  blocked_parts:
+    - ".git"
+    - ".ssh"
+    - ".venv"
+    - "__pycache__"
+    - "node_modules"
+    - "AppData"
+    - "Windows"
+    - "$Recycle.Bin"
+    - "System Volume Information"
+
+  max_read_bytes: 2000000   # 2 MB
+  max_write_bytes: 2000000  # 2 MB
+
+web:
+  allowed_schemes:
+    - "http"
+    - "https"
+  blocked_hosts:
+    - "localhost"
+    - "127.0.0.1"
+    - "0.0.0.0"
+  max_response_bytes: 3000000 # 3 MB
+  max_return_chars: 8000
+  timeout_seconds: 15
+
+ocr:
+  # Path to your local Tesseract binary if installed
+  tesseract_cmd: "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
