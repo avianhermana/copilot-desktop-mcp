@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-0078D6.svg)](https://microsoft.com/windows)
 
-A secure, policy-controlled [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that connects AI assistants (Claude Desktop, Antigravity, Cursor, Windsurf) with native Windows desktop productivity, Microsoft Teams meeting minutes, document synthesis, self-upgrade hot-reloading, and local automation.
+A secure, policy-controlled [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that connects AI assistants (Copilot, Antigravity, Cursor, Windsurf) with native Windows desktop productivity, Microsoft Teams meeting minutes, document synthesis, self-upgrade hot-reloading, and local automation.
 
 ---
 
@@ -126,21 +126,21 @@ copy .env.example .env
 
 ## 🔌 Integration with MCP Clients
 
-### 1. Claude Desktop
-Add this to your `claude_desktop_config.json` (`%APPDATA%\Claude\claude_desktop_config.json`):
+### 1. Copilot Desktop / MCP Clients
+Add this to your MCP configuration file (e.g. `mcp_config.json` or desktop client settings):
 
 ```json
 {
   "mcpServers": {
     "copilot-desktop": {
-      "command": "C:\\Project\\copilot-desktop-mcp\\.venv\\Scripts\\python.exe",
+      "command": "<your-directory-path>\\.venv\\Scripts\\python.exe",
       "args": [
         "-m",
         "copilot_desktop_mcp.server",
         "--transport",
         "stdio"
       ],
-      "cwd": "C:\\Project\\copilot-desktop-mcp"
+      "cwd": "<your-directory-path>"
     }
   }
 }
@@ -153,9 +153,9 @@ Configure your agent settings or MCP configuration:
 {
   "mcpServers": {
     "copilot-desktop": {
-      "command": "C:/Project/copilot-desktop-mcp/.venv/Scripts/python.exe",
+      "command": "<your-directory-path>/.venv/Scripts/python.exe",
       "args": ["-m", "copilot_desktop_mcp.server"],
-      "cwd": "C:/Project/copilot-desktop-mcp"
+      "cwd": "<your-directory-path>"
     }
   }
 }
@@ -168,7 +168,7 @@ Configure your agent settings or MCP configuration:
 ```yaml
 workspace:
   allowed_roots:
-    - "C:\\Project"   # Only paths under allowed_roots can be accessed
+    - "<your-directory-path>"   # Only paths under allowed_roots can be accessed
   blocked_names:
     - ".env"
     - "id_rsa"
@@ -176,7 +176,7 @@ workspace:
   max_write_bytes: 2000000
 
 meeting:
-  recordings_dir: "C:\\Project\\copilot-desktop-mcp\\recordings"
+  recordings_dir: "<your-directory-path>\\recordings"
   default_whisper_model: "small"
 
 ocr:

@@ -62,8 +62,8 @@ echo.
 echo  To run the server:
 echo    run.bat
 echo.
-echo  Or configure in Claude Desktop / Cursor / Antigravity:
-echo    command: C:\Project\copilot-desktop-mcp\.venv\Scripts\python.exe
+echo  Or configure in Copilot / Cursor / Antigravity:
+echo    command: <your-directory-path>\.venv\Scripts\python.exe
 echo    args:    ["-m", "copilot_desktop_mcp.server"]
 echo.
 pause

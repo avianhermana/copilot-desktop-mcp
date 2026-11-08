@@ -78,7 +78,7 @@ def main() -> None:
         "--transport",
         choices=["stdio", "sse", "http"],
         default="stdio",
-        help="Transport layer protocol (default: stdio for Claude Desktop / Cursor)",
+        help="Transport layer protocol (default: stdio for Copilot / Cursor)",
     )
     parser.add_argument("--host", default=None, help="Host to bind for SSE/HTTP")
     parser.add_argument("--port", type=int, default=None, help="Port to bind for SSE/HTTP")

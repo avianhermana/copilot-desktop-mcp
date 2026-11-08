@@ -8,9 +8,9 @@ server:
 
 workspace:
   # Directories the AI agent is allowed to read, write, and search.
-  # Paths can be absolute (e.g. C:\Project, C:\Users\Username\Documents).
+  # Paths can be absolute (e.g. C:\Users\<Username>\Projects or <your-directory-path>).
   allowed_roots:
-    - "C:\\Project"
+    - "<your-directory-path>"
 
   # Specific file names blocked from being read or searched (secrets protection)
   blocked_names:
@@ -53,7 +53,7 @@ ocr:
 
 meeting:
   # Directory where meeting audio and transcripts are stored
-  recordings_dir: "C:\\Project\\copilot-desktop-mcp\\recordings"
+  recordings_dir: "<your-directory-path>\\recordings"
   default_whisper_model: "small" # options: tiny, base, small, medium
 
 telegram:
