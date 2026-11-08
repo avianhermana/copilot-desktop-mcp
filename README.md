@@ -213,7 +213,7 @@ Please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide for details on our code 
 
 If this project saved you time, enhanced your AI workflow, or helped you in your daily work, consider supporting its development:
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/avianhermana)
+[![Buy Me a Coffee]
 [![Saweria](https://img.shields.io/badge/Saweria-Support%20via%20QRIS-orange?style=for-the-badge)](https://saweria.co/avianhermana)
 [![Trakteer](https://img.shields.io/badge/Trakteer-Support%20Author-red?style=for-the-badge)](https://trakteer.id/avianhermana)
 
