@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "A policy-controlled Model Context Protocol (MCP) server for Windows desktop automation, office documents, and local AI productivity."
 readme = "README.md"
 authors = [
-    { name = "Dennis", email = "developer@example.com" }
+    { name = "Avian Hermana", email = "avianhermana@gmail.com" }
 ]
 license = { text = "MIT" }
 requires-python = ">=3.10"
