@@ -16,6 +16,7 @@ from .config import BASE_DIR, load_config
 from .tools_desktop import register_desktop_tools
 from .tools_document import register_document_tools
 from .tools_meeting import register_meeting_tools
+from .tools_self_upgrade import register_self_upgrade_tools
 from .tools_telegram import register_telegram_tools
 from .tools_utilities import register_utility_tools
 from .tools_workspace import register_workspace_tools
@@ -65,6 +66,7 @@ def create_app(config: dict[str, Any] | None = None) -> FastMCP:
     register_desktop_tools(mcp, cfg)
     register_meeting_tools(mcp, cfg)
     register_telegram_tools(mcp, cfg)
+    register_self_upgrade_tools(mcp, cfg)
     register_utility_tools(mcp, cfg)
 
     return mcp

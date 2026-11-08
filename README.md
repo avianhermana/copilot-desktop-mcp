@@ -2,11 +2,11 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![MCP Standard](https://img.shields.io/badge/MCP-FastMCP%20Standard-green.svg)](https://modelcontextprotocol.io/)
-[![Tools: 38](https://img.shields.io/badge/Tools-38%20Active-brightgreen.svg)](#-key-features--tools-38-modular-tools)
+[![Tools: 50](https://img.shields.io/badge/Tools-50%20Active-brightgreen.svg)](#-key-features--tools-50-modular-tools)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-0078D6.svg)](https://microsoft.com/windows)
 
-A secure, policy-controlled [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that connects AI assistants (Claude Desktop, Antigravity, Cursor, Windsurf) with native Windows desktop productivity, Microsoft Teams meeting minutes, document synthesis, and local automation.
+A secure, policy-controlled [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that connects AI assistants (Claude Desktop, Antigravity, Cursor, Windsurf) with native Windows desktop productivity, Microsoft Teams meeting minutes, document synthesis, self-upgrade hot-reloading, and local automation.
 
 ---
 
@@ -16,15 +16,17 @@ In most corporate environments, teams run predominantly on Windows, Microsoft 36
 - They cannot directly generate native binary Office documents (`.xlsx`, `.docx`, `.pptx`, `.pdf`) directly onto your workspace.
 - They cannot record and transcribe internal Microsoft Teams / Zoom meetings into formatted meeting minutes (notulen) without expensive enterprise add-on subscriptions ($30/user/mo).
 - They lack desktop awareness, local OCR, clipboard manipulation, and Telegram alert dispatching.
+- They cannot autonomously update or self-upgrade without breaking or requiring manual terminal restarts.
 
-**Copilot Desktop MCP** solves this by providing a unified, open-source bridge while enforcing **zero-trust security sandboxing**:
+**Copilot Desktop MCP** solves this by providing a unified, open-source bridge with **50 active tools** while enforcing **zero-trust security sandboxing**:
 - 🛡️ **Workspace Sandboxing:** Tools can only access files within explicitly allowed directories (`allowed_roots`).
 - 🔒 **Secrets Redaction:** Automatically blocks sensitive files (`.env`, SSH keys) from tool access and masks credentials in audit logs.
 - 📜 **Full Audit Logging:** Every tool call, argument, and execution outcome is recorded to `logs/audit.log`.
+- 🔄 **Safe Self-Upgrade & Hot-Reload:** Automatic backups and isolated subprocess validation before hot-restarting the server.
 
 ---
 
-## 🚀 Key Features & Tools (38 Modular Tools)
+## 🚀 Key Features & Tools (50 Modular Tools)
 
 ### 1. 🎙️ AI Meeting Minutes & Teams Audio Transcriber
 * **`start_meeting_recording`**: Captures meeting audio (Microsoft Teams, Zoom, Google Meet) via Windows WASAPI loopback (speaker audio of attendees) and/or local microphone.
@@ -45,7 +47,17 @@ In most corporate environments, teams run predominantly on Windows, Microsoft 36
 * **`send_telegram_document`**: Push generated reports (`.xlsx`, `.docx`, `.pdf`) directly to your mobile Telegram.
 * **`test_telegram_connection`**: Validate bot credentials and verify API reachability.
 
-### 4. 👁️ Desktop Awareness & OCR
+### 4. 🔄 Autonomous Self-Upgrade & Hot-Reload
+* **`apply_self_update`**: Atomic upgrade: creates a timestamped backup snapshot, validates syntax, and restarts the server process.
+* **`restart_self`**: Hot-restart the MCP server in background so newly installed tools or code edits activate immediately.
+* **`backup_self`**: Snapshot current code and configuration into `backups/`.
+* **`list_backups`**: View and audit previous backup snapshots.
+* **`restore_backup`**: Instant rollback to any previous working state if an error is detected.
+* **`validate_pending_changes`**: Syntax compilation check in an isolated subprocess to prevent breaking live agents.
+* **`check_git_updates`**: Check if newer commits are available on GitHub remote.
+* **`pull_git_update`**: Pull latest GitHub updates with automatic rollback protection.
+
+### 5. 👁️ Desktop Awareness & OCR
 * **`take_screen_snapshot`**: Capture the active window or full virtual screen as PNG.
 * **`read_image_text`**: Optical Character Recognition (OCR) via Tesseract for extracting text from screenshots and diagrams.
 * **`get_active_window`**: Inspect the currently focused foreground application (title, PID, process name, bounds).
@@ -54,7 +66,13 @@ In most corporate environments, teams run predominantly on Windows, Microsoft 36
 * **`notify_user`**: Trigger native Windows Toast Notification popups.
 * **`run_diagnostic_ps`**: Execute safe, read-only diagnostic PowerShell queries (Get-*, Test-*, ipconfig, systeminfo).
 
-### 5. 🛡️ Sandboxed Workspace Operations
+### 6. 💻 Productivity Apps & Git Manager
+* **`open_app`**: Launch whitelisted desktop applications (`vscode`, `notepad`, `calc`, `excel`, `word`, `powerpoint`, `terminal`).
+* **`git_status`**: View short git status and branch info for workspaces.
+* **`git_diff`**: View file change statistics and diffs.
+* **`git_log`**: Inspect recent git commit logs.
+
+### 7. 🛡️ Sandboxed Workspace Operations
 * **`list_directory`**: Safely explore folders within allowed project roots.
 * **`read_file` & `write_file`**: Read and write plain text files with strict byte limits.
 * **`apply_text_replacement`**: Perform precise, single-occurrence text replacements in files.
@@ -63,7 +81,7 @@ In most corporate environments, teams run predominantly on Windows, Microsoft 36
 * **`create_sqlite`**: Provision local SQLite databases with predefined schemas and data.
 * **`fetch_url`**: Read and extract cleaned readable text from public web pages.
 
-### 6. 🧰 Daily Smart Utilities
+### 8. 🧰 Daily Smart Utilities
 * **`system_status`**: Real-time CPU, RAM, and Disk utilization metrics.
 * **`disk_usage_report`**: Identify which subdirectories are consuming the most disk space.
 * **`create_qrcode`**: Instantly generate QR codes for links or text.
@@ -163,6 +181,12 @@ meeting:
 
 ocr:
   tesseract_cmd: "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+
+apps:
+  allowed:
+    vscode: "code"
+    notepad: "notepad.exe"
+    excel: "excel.exe"
 ```
 
 ---
@@ -173,6 +197,7 @@ ocr:
 * **Path Traversal Protection:** Absolute path canonicalization ensures no escaping outside `allowed_roots`.
 * **Safe Subprocesses:** Diagnostic tools enforce strict command whitelisting to eliminate shell injection risks.
 * **Confidentiality:** Audio recordings and OCR transcripts are processed 100% locally on your machine.
+* **Safe Hot-Reload:** Code changes are verified for syntax validity in a fresh subprocess before any server restart.
 
 ---
 

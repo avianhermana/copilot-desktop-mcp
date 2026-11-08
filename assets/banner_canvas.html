@@ -151,8 +151,8 @@
     }
     .icon-box.rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
     .icon-box.green { background: rgba(52, 211, 153, 0.15); color: #34d399; }
-    .icon-box.blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
     .icon-box.purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+    .icon-box.blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
     
     .icon-box svg {
       width: 18px;
@@ -283,9 +283,9 @@
       border: 1px solid rgba(63, 185, 80, 0.3);
     }
     .status-pill.telegram {
-      background: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
     }
   </style>
 </head>
@@ -300,20 +300,20 @@
       <div>
         <div class="badge-bar">
           <div class="pulse-dot"></div>
-          <span class="badge-text">Model Context Protocol • 38 Active Tools</span>
+          <span class="badge-text">Model Context Protocol • 50 Active Tools</span>
         </div>
 
         <div class="title-group">
           <h1 class="title">Copilot Desktop <span class="gradient-text">MCP</span></h1>
           <p class="subtitle">
-            Enterprise Windows automation, Teams meeting minutes (Whisper), and native Office synthesis for autonomous AI agents.
+            Enterprise Windows automation, Teams meeting minutes (Whisper), Office synthesis, and autonomous hot-reloading for AI agents.
           </p>
         </div>
 
         <div class="features-grid">
           <div class="feature-card">
             <div class="icon-box rose">
-              <!-- Microphone / Meeting Minutes Icon -->
+              <!-- Microphone Icon -->
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
               </svg>
@@ -338,8 +338,21 @@
           </div>
 
           <div class="feature-card">
+            <div class="icon-box purple">
+              <!-- Self Upgrade Icon (Refresh / Loop) -->
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4>Self-Upgrade & Hot-Reload</h4>
+              <p>Auto-backup, validate syntax & restart</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
             <div class="icon-box blue">
-              <!-- Telegram / Mobile Dispatch Icon -->
+              <!-- Telegram / Mobile Icon -->
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
               </svg>
@@ -347,19 +360,6 @@
             <div class="feature-content">
               <h4>Telegram Dispatcher</h4>
               <p>Push alerts, summaries & docs to mobile</p>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon-box purple">
-              <!-- Security Shield Icon -->
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-            </div>
-            <div class="feature-content">
-              <h4>Zero-Trust Sandbox</h4>
-              <p>Directory bounds, token redaction & logs</p>
             </div>
           </div>
         </div>
@@ -388,32 +388,30 @@
           <div class="dot red"></div>
           <div class="dot yellow"></div>
           <div class="dot green"></div>
-          <span class="terminal-title">mcp-client :: Teams Meeting Copilot</span>
+          <span class="terminal-title">mcp-client :: Autonomous Self-Upgrade</span>
         </div>
         <div class="terminal-body">
-          <div class="t-comment">// Transcribe Teams audio & generate minutes</div>
+          <div class="t-comment">// Applying safe atomic tool hot-reload</div>
           <div>
             <span class="t-cyan">→ client.call_tool</span><span class="t-white">(</span><br>
-            &nbsp;&nbsp;<span class="t-yellow">"transcribe_meeting"</span><span class="t-white">,</span><br>
+            &nbsp;&nbsp;<span class="t-yellow">"apply_self_update"</span><span class="t-white">,</span><br>
             &nbsp;&nbsp;<span class="t-white">{</span><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-purple">"session_id"</span><span class="t-white">:</span> <span class="t-yellow">"20261108-Weekly-Sync"</span><span class="t-white">,</span><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-purple">"language"</span><span class="t-white">:</span> <span class="t-yellow">"id"</span><span class="t-white">,</span><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-purple">"model"</span><span class="t-white">:</span> <span class="t-yellow">"small"</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-purple">"reason"</span><span class="t-white">:</span> <span class="t-yellow">"Added custom analytics tool"</span><br>
             &nbsp;&nbsp;<span class="t-white">}</span><br>
             <span class="t-white">)</span>
           </div>
           <div style="margin-top: 10px;">
-            <span class="t-green">✔ Status: 200 OK</span> <span class="t-comment">(Whisper Offline)</span><br>
-            <span class="t-comment">↳ Exported: Notulen_Meeting_Sync.docx</span><br>
-            <span class="t-cyan">↳ Dispatched to Telegram Mobile</span>
+            <span class="t-green">✔ Snapshot Backed Up:</span> <span class="t-comment">20261108_174500</span><br>
+            <span class="t-green">✔ Syntax Validated:</span> <span class="t-comment">compileall check passed</span><br>
+            <span class="t-cyan">✔ Hot-Restart Triggered:</span> <span class="t-comment">(1.5s delay)</span>
           </div>
 
           <div class="status-badge-row">
             <div class="status-pill success">
-              <span>●</span> WASAPI Loopback Active
+              <span>●</span> Zero-Downtime Safe
             </div>
             <div class="status-pill telegram">
-              <span>✈</span> Telegram Connected
+              <span>⚡</span> 50 Tools Active
             </div>
           </div>
         </div>

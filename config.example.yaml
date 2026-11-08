@@ -61,3 +61,14 @@ telegram:
   # Recommended: set via TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env
   bot_token: ""
   default_chat_id: ""
+
+apps:
+  # Approved desktop applications that can be launched via open_app
+  allowed:
+    vscode: "code"
+    notepad: "notepad.exe"
+    calc: "calc.exe"
+    excel: "excel.exe"
+    word: "winword.exe"
+    powerpoint: "powerpnt.exe"
+    terminal: "wt.exe"
