@@ -1,0 +1,9 @@
+# GitHub Funding Configuration
+# This file enables the "Sponsor" button on your GitHub repository.
+
+github: avianhermana
+buy_me_a_coffee: avianhermana
+ko_fi: avianhermana
+custom:
+  - https://saweria.co/avianhermana
+  - https://trakteer.id/avianhermana

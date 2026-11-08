@@ -201,6 +201,26 @@ apps:
 
 ---
 
+## 🤝 Contributing
+
+Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
+
+Please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide for details on our code of conduct and development setup.
+
+---
+
+## ☕ Support & Sponsorship
+
+If this project saved you time, enhanced your AI workflow, or helped you in your daily work, consider supporting its development:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/avianhermana)
+[![Saweria](https://img.shields.io/badge/Saweria-Support%20via%20QRIS-orange?style=for-the-badge)](https://saweria.co/avianhermana)
+[![Trakteer](https://img.shields.io/badge/Trakteer-Support%20Author-red?style=for-the-badge)](https://trakteer.id/avianhermana)
+
+Your support helps maintain the project, add more desktop tools, and keep it 100% open-source!
+
+---
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
