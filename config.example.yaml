@@ -50,3 +50,14 @@ web:
 ocr:
   # Path to your local Tesseract binary if installed
   tesseract_cmd: "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+
+meeting:
+  # Directory where meeting audio and transcripts are stored
+  recordings_dir: "C:\\Project\\copilot-desktop-mcp\\recordings"
+  default_whisper_model: "small" # options: tiny, base, small, medium
+
+telegram:
+  # Optional: For sending meeting minutes and documents directly to your Telegram
+  # Recommended: set via TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env
+  bot_token: ""
+  default_chat_id: ""

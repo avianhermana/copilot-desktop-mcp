@@ -48,6 +48,14 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "ocr": {
         "tesseract_cmd": r"C:\Program Files\Tesseract-OCR\tesseract.exe",
     },
+    "meeting": {
+        "recordings_dir": str(Path.home() / ".copilot-desktop" / "recordings"),
+        "default_whisper_model": "small",
+    },
+    "telegram": {
+        "bot_token": "",
+        "default_chat_id": "",
+    },
 }
 
 
